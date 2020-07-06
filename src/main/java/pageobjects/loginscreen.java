@@ -1,13 +1,22 @@
 package pageobjects;
-
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import utils.Base;
 
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+
+/**
+* LoginScreen class
+* All the Elements of Login Screen.
+* Using page factory get the page element
+
+* @author  Kirit Thakrar
+* @version 1.0
+* @since   2020-06-07
+*/
 
 public class loginscreen extends Base {
 
@@ -40,10 +49,4 @@ public class loginscreen extends Base {
     @AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/drawer_item_title")
     public MobileElement Home_btn;
     
-
-
-
-
-
-
 }

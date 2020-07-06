@@ -1,11 +1,9 @@
 package Ebay.Test;
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import atu.testng.reports.ATUReports;
 import atu.testng.reports.logging.LogAs;
 import atu.testng.selenium.reports.CaptureScreen;
@@ -13,8 +11,23 @@ import atu.testng.selenium.reports.CaptureScreen.ScreenshotOf;
 import pageobjects.searchproductscreen;
 import utils.Base;
 
+/**
+* Search the product and goto product details screen.
+* add product in cart and verify it
+* Successfully add product in cart and delete the item. 
+* Extends the Base class for initialize the driver and set up environment 
+* @author  Kirit Thakrar
+* @version 1.0
+* @since   2020-06-07
+*/
 
 public class searchproduct extends Base {
+	
+	 /**
+	   * This is second test case to search and add to cart of product.
+	   * Verify product details like Desc, Price and company name.
+	   * 
+	   */
 	
 	static Logger log = Logger.getLogger(searchproduct.class);
     @Test(description = "TC-02 | Search Item Test case",priority = 2)
@@ -28,7 +41,7 @@ public class searchproduct extends Base {
 	        	String price_cart = new String();
 	        	String company_name_txt = new String();
 	            
-	            Thread.sleep(5000);
+	            
 	            log.info("Start the Search Item Test Case");
 	            // Create an object for Search screen to get all elements of search and add to card screen.
 	            searchproductscreen searchScreen = new searchproductscreen(driver);
@@ -37,10 +50,9 @@ public class searchproduct extends Base {
 	            
 	            // Click on search textbox and enter search text
 	            searchScreen.search_txt.click();
-	            Thread.sleep(2000);
+	            waitForElement(driver,searchScreen.search_txt);
 	            searchScreen.search_txt.sendKeys("65-inch TV");
 	            log.info("Enter the 65-inch TV in search textbox");
-	            Thread.sleep(2000);
 	            waitForElement(driver,searchScreen.item_txt);
 	            ATUReports.add("Enter value in Search box","65-inch TV","-","-", LogAs.INFO, new CaptureScreen(ScreenshotOf.BROWSER_PAGE));
 	            searchScreen.item_txt.click();
@@ -52,7 +64,7 @@ public class searchproduct extends Base {
 	            
 	            // get the item description from search screen.
 	            item_title_name = searchScreen.item_title_txt.getText();
-	            driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);  
+	            waitForElement(driver,searchScreen.company_name_txt);
 	            
 	            // get the company name from search screen.
 	            company_name_txt = searchScreen.company_name_txt.getText();
@@ -75,7 +87,7 @@ public class searchproduct extends Base {
 	            log.info("Verify product description from the detail page.");
 	            
 				// get the item price from search screen.
-				Thread.sleep(3000);
+	            waitForElement(driver,searchScreen.price_txt);
 	            price_name = searchScreen.price_txt.getText();
 	            log.info("Get the Company name, product description and price from the search page.");
 	            

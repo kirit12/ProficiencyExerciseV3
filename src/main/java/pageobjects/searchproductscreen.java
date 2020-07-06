@@ -5,9 +5,18 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import utils.Base;
-
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+
+/**
+* SearchScreen class
+* Get all the Elements of Search product, Detail Screen and Check out Screen.
+* Using page factory get the page element
+
+* @author  Kirit Thakrar
+* @version 1.0
+* @since   2020-06-07
+*/
 
 public class searchproductscreen extends Base {
 
@@ -56,14 +65,5 @@ public class searchproductscreen extends Base {
     
     @AndroidFindBy(xpath = "//android.widget.Button[contains(@text, 'Delete')]")
     public MobileElement delete_item_cart;
-    
-    
-
-   
-
-
-
-
-
-
+ 
 }
