@@ -12,8 +12,8 @@ Run the Testcases:
 - Start appium server externally , Stop when execution done
 - Add mobile device id in folder \src\test\resources\TestData.xlsx
 - To Sign in application update your username and password in TestData.xlsx file.
-- Product will be succesfully will get added to cart.
-- Logg are genarate in log>Application Log.log file.
+- Product will be succesfully search and added to cart.
+- Logger are genarate in log>Application Log.log file.
 - ATU report genarate under ATU_Report folder > index.html and Default TestNg report will be used for reporting.
 - Src>Main>Java contains Pages and implementation methods
 - Src>Test contains TestCases.
