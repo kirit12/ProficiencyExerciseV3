@@ -6,6 +6,8 @@ Prerequisite:
 - Install Maven (Version: apache-maven-3.6.1)
 - Appium (Version: 1.17.1)
 
+Run the Testcases:
+
 - To automate ebay application on android device.
 - Start appium server externally , Stop when execution done
 - Add mobile device id in folder \src\test\resources\TestData.xlsx
